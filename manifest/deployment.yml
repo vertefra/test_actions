@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: test_actions_deployment
-  name: test_actions_deployment
+    app: test-actions-deployment
+  name: test-actions-deployment
   namespace: test-actions-ns
 spec:
   replicas: 3
