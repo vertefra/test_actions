@@ -4,14 +4,17 @@ on: [push]
 
 jobs:
   build:
+    environment:
+      name: test_env
+
     runs-on: ubuntu-latest
   
     steps:
       - name: Login
         uses: docker/login-action@v1
         with:
-          username: ${{secrets.DOCKERHUB_USER}}
-          password: ${{secrets.DOCKERHUB_TOKEN}}
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and Push
         id: test_actions
