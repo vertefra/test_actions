@@ -1,0 +1,14 @@
+name: Build and Push
+
+on: [push]
+
+  build:
+    runs-on: ubuntu-latest
+  
+  steps:
+    - name: Build and Push
+      id: test_actions
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: vertefra/test_actions:latest
