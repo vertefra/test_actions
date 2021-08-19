@@ -10,7 +10,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: test_actions_deployment
+      app: test-actions-deployment
   strategy: {}
   template:
     metadata:
