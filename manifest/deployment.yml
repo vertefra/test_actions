@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: test_actions_deployment
+  name: test_actions_deployment
+  namespace: test-actions-ns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test_actions_deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: test_actions_deployment
+    spec:
+      containers:
+      - image: vertefra/test_actions
+        imagePullPolicy: IfNotPresent
+        name: test-actions-47n8k
+        resources: 
+          requests:
+            cpu: 50m
+            memory: 256Mi
+status: {}
