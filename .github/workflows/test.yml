@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  push:
+    branch: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    
+    - name: Install Dependencies
+      run: |
+        python -pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run Tests
+      run pytest -x -s
